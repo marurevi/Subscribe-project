@@ -11,17 +11,25 @@ document.getElementById('product-form').addEventListener('submit', (e) => {
   let imported = document.getElementById('imported').checked;
   let category = document.getElementById('category').value;
 
-  const product = new Product(name, price, quantity, imported, category);
+  if (name === '' || price === '' || quantity === '') {
+    const alert = document.querySelector('.notification');
+    alert.classList.remove('hidden');
+    setTimeout(() => {
+      alert.classList.add('hidden');
+    }, 3000);
+  } else {
+    const product = new Product(name, price, quantity, imported, category);
 
-  Receipt.addNewProductToList(product);
-  Storage.addProduct(product);
+    Receipt.addNewProductToList(product);
+    Storage.addProduct(product);
 
-  name = '';
-  price = '';
-  quantity = '';
-  imported = false;
-  category = 'other';
-  document.location.reload();
+    name = '';
+    price = '';
+    quantity = '';
+    imported = false;
+    category = 'other';
+    document.location.reload();
+  }
 });
 
 document.getElementById('delete').addEventListener('click', (e) => {

@@ -69,3 +69,21 @@ button {
   font-size: 1rem;
   cursor: pointer;
 }
+
+.notification {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.hidden {
+  display: none;
+}
