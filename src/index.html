@@ -8,7 +8,41 @@
   <title>Subscribe - Project | Mariana Revilla</title>
 </head>
 <body>
-  <h1>Subscribe</h1>
+  <h1>Subscribe test</h1>
+
+  <h2>Introduce the product data here:</h2>
+  <form action="#" id="product-form">
+    <div class="name-field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div class="price-field">
+      <label for="price" name="price">Unit Price</label>
+      <input type="text" name="price" id="price" /><br>
+    </div>
+    <div class="quantity-field">
+      <label for="quantity" name="quantity">Quantity</label>
+      <input type="text" name="quantity" id="quantity" /><br>
+    </div>
+    <div class="imported-field">
+      <label for="imported" name="imported">Imported Product</label>
+      <input type="checkbox" name="imported" id="imported" /><br>
+    </div>
+    <div class="category-field">
+      <label for="category" name="category">Category</label>
+      <select name="category" id="category">
+        <option value="">Select one</option>
+        <option value="book">Book</option>
+        <option value="food">Food</option>
+        <option value="medical">Medical</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="submit-button">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
 
   <h2>Receipt</h2>
     <Table>
@@ -27,6 +61,8 @@
         <tr id="result" style="font-weight: bold;"></tr>
       </tfoot>
     </Table>
+
+    <button type="button" id="delete">Erase Receipt</button>
   
 
   <script src="app.js" type="module"></script>

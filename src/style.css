@@ -10,11 +10,29 @@
 body {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 2rem;
   background-color: #d7d5d5;
   color: #333;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+}
+
+form div {
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 
 table {
@@ -38,4 +56,16 @@ table td {
   padding: 0.5rem;
   text-align: center;
   border-right: rgb(174, 174, 174) 1px solid;
+}
+
+button {
+  align-self: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
 }

@@ -1,15 +1,11 @@
 /* eslint-disable no-unused-expressions */
-import Product from './product.js';
+import Storage from './storage.js';
 
 class Receipt {
   static showReceipt() {
     let result = 0; let
       salesTaxes = 0;
-    const products = [
-      new Product('book', 12.49, 2, false, 'book'),
-      new Product('music CD', 14.99, 1, false, 'other'),
-      new Product('chocolate bar', 0.85, 1, false, 'food'),
-    ];
+    const products = Storage.getProducts();
 
     products && products.forEach((product) => {
       Receipt.addNewProductToList(product);
@@ -19,6 +15,7 @@ class Receipt {
       salesTaxes += parseFloat(taxes);
       result += parseFloat(total);
     });
+    /* eslint-disable no-unused-expressions */
 
     const total = document.getElementById('result');
     total.innerHTML = `
@@ -28,7 +25,7 @@ class Receipt {
       <td></td>
       <td>${salesTaxes}</td>
       <td>${result}</td>
-      `;
+    `;
   }
 
   static addNewProductToList(product) {
@@ -39,13 +36,13 @@ class Receipt {
     const total = (price + taxes).toFixed(2);
 
     trow.innerHTML = `
-        <td>${product.name}</td>
-        <td>${product.quantity}</td>
-        <td>${product.price}</td>
-        <td>${price}</td>
-        <td>${taxes}</td>
-        <td>${total}</td>
-      `;
+      <td>${product.name}</td>
+      <td>${product.quantity}</td>
+      <td>${product.price}</td>
+      <td>${price}</td>
+      <td>${taxes}</td>
+      <td>${total}</td>
+    `;
     productsList.appendChild(trow);
   }
 }
