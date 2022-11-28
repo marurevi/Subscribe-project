@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  background-color: #f5f5f5;
+  background-color: #d7d5d5;
   color: #333;
   font-size: 1rem;
   line-height: 1.5;
@@ -19,11 +19,23 @@ body {
 
 table {
   width: 100%;
-  padding: 1.5rem;
   max-width: 500px;
-  margin: 1.5rem 0;
+  margin: 1.5rem 0.5rem;
   border-collapse: collapse;
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  background-color: white;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+table th {
+  padding: 0.5rem;
+  text-align: center;
+  border: #333 1px solid;
+}
+
+table td {
+  padding: 0.5rem;
+  text-align: center;
+  border-right: rgb(174, 174, 174) 1px solid;
 }
