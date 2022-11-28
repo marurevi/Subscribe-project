@@ -5,7 +5,13 @@ class Product {
     this.quantity = quantity;
     this.impoted = impoted;
     this.category = category;
-    this.taxes = taxes;
+    this.taxes = this.getTaxes();
+  }
+  getTaxes() {
+    let taxes = 0;
+    if (this.impoted) taxes += 0.05;
+    if (this.category === 'other') taxes += 0.1;
+    return taxes;
   }
 }
 
@@ -18,13 +24,17 @@ const products = [
 products.forEach((product) => {
   const productsList = document.getElementById('products-list');
   const trow = document.createElement('tr');
+  const price = product.price * product.quantity;
+  const taxes = Math.round((price * product.taxes) * 100) / 100;
+  const total = (price + taxes).toFixed(2);
+
   trow.innerHTML = `
     <td>${product.name}</td>
     <td>${product.quantity}</td>
     <td>${product.price}</td>
-    <td>${product.quantity * product.price}</td>
-    <td>${product.taxes}</td>
-    <td>${product.quantity * product.price + product.taxes}</td>
+    <td>${price}</td>
+    <td>${taxes}</td>
+    <td>${total}</td>
   `;
   productsList.appendChild(trow);
 });
